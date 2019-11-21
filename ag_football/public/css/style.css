@@ -1,0 +1,33 @@
+nav{
+    position: fixed;
+    margin-top: 0;
+}
+
+h1{
+    text-align: center;  
+    color: #3ebd9d;
+    margin-top: 7%;
+}
+
+h2{
+    text-align: center;
+    color: #2d3f4f;
+    margin-top: 3%;
+}
+
+.formulaire{
+    margin: 5% auto;
+}
+
+table{
+    margin: 5% auto;
+}
+
+tr, th, td{
+    text-align: center;
+    color: #2d3f4f;
+}
+
+th{
+    color: #3ebd9d;
+}
