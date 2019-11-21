@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}V.H.F.{% endblock %}
+
+{% block body %}
+<h2>Liste des équipements</h2>
+
+<table class="table table-hover col-lg-3 col-md-6 col-sm-8">
+        <tr>
+            <th scope="col">Désignation</th>
+            <th scope="col">Quantité</th>
+
+        </tr>
+    {% for equipment in equipments %}
+            <tr>
+        
+                <td><a href="{{ path('home') }}">{{ equipment.designation }}</a></td>
+                <td>{{ equipment.quantity }}</td>
+            </tr>
+    {% endfor %}
+</table>
+
+
+
+{% endblock %}
