@@ -4,7 +4,7 @@ nav{
 }
 
 h1{
-    text-align: center;  
+    text-align: center !important;  
     color: #3ebd9d;
     margin-top: 7%;
 }
@@ -19,6 +19,14 @@ h2{
     margin: 5% auto;
 }
 
+.input{
+    margin-bottom : 3%;
+}
+
+.btn {
+    
+}
+
 table{
     margin: 5% auto;
 }
@@ -30,4 +38,8 @@ tr, th, td{
 
 th{
     color: #3ebd9d;
+}
+
+td>a{
+    color: #2d3f4f;
 }
