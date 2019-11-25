@@ -11,10 +11,10 @@
             <th scope="col">Quantité</th>
 
         </tr>
-    {% for equipment in equipments %}
+    {% for equipment in equipments | sort %}
             <tr>
         
-                <td><a href="{{ path('home') }}">{{ equipment.designation }}</a></td>
+                <td><a href="{{ path('list_infos', { 'id': equipment.id }) }}">{{ equipment.designation }}</a></td>
                 <td>{{ equipment.quantity }}</td>
             </tr>
     {% endfor %}

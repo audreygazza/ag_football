@@ -12,21 +12,22 @@
 
         {{ form_start(form) }}
             {{ form_label(form.designation, null, {'label_attr': {'class': 'sr-only'}}) }}
-            {{ form_widget(form.designation, {'attr': {'class': 'form-control', 'placeholder': 'Désignation...'}}) }}
+            {{ form_widget(form.designation, {'attr': {'class': 'form-control input', 'placeholder': 'Désignation...'}}) }}
 
             {{ form_label(form.description, null, {'label_attr': {'class': 'sr-only'}}) }}
-            {{ form_widget(form.description, {'attr': {'class': 'form-control', 'placeholder': 'Description...'}}) }}
+            {{ form_widget(form.description, {'attr': {'class': 'form-control input', 'placeholder': 'Description...'}}) }}
 
             {{ form_label(form.brand, null, {'label_attr': {'class': 'sr-only'}}) }}
-            {{ form_widget(form.brand, {'attr': {'class': 'form-control', 'placeholder': 'Marque...'}}) }}
+            {{ form_widget(form.brand, {'attr': {'class': 'form-control input', 'placeholder': 'Marque...'}}) }}
 
             {{ form_label(form.price, null, {'label_attr': {'class': 'sr-only'}}) }}
-            {{ form_widget(form.price, {'attr': {'class': 'form-control', 'placeholder': 'Prix...'}}) }}
+            {{ form_widget(form.price, {'attr': {'class': 'form-control input', 'placeholder': 'Prix...'}}) }}
 
             {{ form_label(form.quantity, null, {'label_attr': {'class': 'sr-only'}}) }}
-            {{ form_widget(form.quantity, {'attr': {'class': 'form-control', 'placeholder': 'Quantité...'}}) }}
-
-            <button type="submit" class="btn btn-md btn-primary">Enregistrer</button>
+            {{ form_widget(form.quantity, {'attr': {'class': 'form-control input', 'placeholder': 'Quantité...'}}) }}
+            <div class="row justify-content-center">
+                <button type="submit" class="btn btn-success">Enregistrer</button>
+            </div>
 
         {{ form_end(form) }}
 

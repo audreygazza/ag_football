@@ -24,11 +24,17 @@ class ListController extends AbstractController
     }
 
     /**
-     * @Route("/list/12", name="list_infos")
+     * @Route("/list/{id}", name="list_infos")
      */
-    public function infos()
+    public function infos($id)
     {   
-        return $this->render('list/list.html.twig');
+        $repo = $this->getDoctrine()->getRepository(Equipment::class);
+
+        $equipment = $repo->find($id);
+
+        return $this->render('list/infos.html.twig', [
+            'equipment' => $equipment,
+        ]);
     }
     
 }
