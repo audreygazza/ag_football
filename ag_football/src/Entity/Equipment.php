@@ -33,7 +33,7 @@ class Equipment
      *     type="string",
      *     message="The value {{ value }} is not a valid, it should be {{ type }}."
      * )
-     * @Assert\Regex("/^[\p{L}-_\/,;.:\(\)]*$/u")
+     * @Assert\Regex("/[\p{L}0-9-_\/,;.:\(\)]*$/u")
      */
     private $description;
 
