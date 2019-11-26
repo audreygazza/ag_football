@@ -7,22 +7,16 @@
 
 <table class="table table-hover col-lg-3 col-md-6 col-sm-8">
         <tr>
-            <th scope="col">Désignation</th>
-            <th scope="col">Quantité</th>
+            <th>Désignation</th>
+            <th>Quantité</th>
 
         </tr>
     {% for equipment in equipments | sort %}
-            <tr onclick="document.location.href={{ path('list_infos', { 'id': equipment.id }) }} ">
-        
+            <tr>
                 <td><a href="{{ path('list_infos', { 'id': equipment.id }) }}">{{ equipment.designation }}</a></td>
                 <td>{{ equipment.quantity }}</td>
             </tr>
     {% endfor %}
 </table>
-
-<script type="text/javascript">
-document.querySelectorAll(tr)
-
-</script>
 
 {% endblock %}
