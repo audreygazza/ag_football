@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EquipmentRepository")
@@ -18,26 +19,45 @@ class Equipment
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Type(
+     *     type="string",
+     *     message="The value {{ value }} is not a valid, it should be {{ type }}."
+     * )
+     * @Assert\Regex("/^[\p{L}-]*$/u")
      */
     private $designation;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Type(
+     *     type="string",
+     *     message="The value {{ value }} is not a valid, it should be {{ type }}."
+     * )
+     * @Assert\Regex("/^[\p{L}-_\/,;.:\(\)]*$/u")
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Type(
+     *     type="string",
+     *     message="The value {{ value }} is not a valid, it should be {{ type }}."
+     * )
+     * @Assert\Regex("/[0-9A-Za-z-_éèêçùàï]/")
      */
     private $brand;
 
     /**
      * @ORM\Column(type="float")
+     * @Assert\Type("float")
+     * @Assert\Regex("/^[0-9.,]/")
      */
     private $price;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Type("integer")
+     * @Assert\Regex("/^[0-9]/")
      */
     private $quantity;
 

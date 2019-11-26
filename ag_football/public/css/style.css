@@ -1,3 +1,4 @@
+/* BASE */
 nav{
     position: fixed;
     margin-top: 0;
@@ -8,6 +9,8 @@ h1{
     color: #3ebd9d;
     margin-top: 7%;
 }
+
+/* FORMULAIRE */
 
 h2{
     text-align: center;
@@ -23,9 +26,7 @@ h2{
     margin-bottom : 3%;
 }
 
-.btn {
-    
-}
+/* LISTE EQUIPEMENTS */
 
 table{
     margin: 5% auto;
@@ -42,4 +43,10 @@ th{
 
 td>a{
     color: #2d3f4f;
+}
+
+/* INFOS EQUIPEMENT */
+.description{
+    text-align: justify;
+    margin-top: 10%;
 }

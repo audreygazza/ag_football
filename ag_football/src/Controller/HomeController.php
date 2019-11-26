@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="home", methods={"GET","POST"})
      */
     public function index(Request $request, ObjectManager $manager)
     {
@@ -35,19 +35,33 @@ class HomeController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/create", name="create")
+        /**
+     * @Route("/list", name="list", methods={"GET"})
      */
-    public function home()
+    public function list()
     {
-        $equipment = new Equipment();
-        $form = $this->createForm(EquipmentType::class, $equipment);   
+        $repo = $this->getDoctrine()->getRepository(Equipment::class);
 
-        return $this->render('home/index.html.twig', [
-            'title' => "Nouvel équipement",
-            'form' => $form->createView(),
+        $equipments = $repo->findAll();
+
+        return $this->render('list/list.html.twig', [
+            'controller_name' => 'ListController',
+            'equipments' => $equipments,
         ]);
     }
 
+    /**
+     * @Route("/list/{id}", name="list_infos", methods={"GET"})
+     */
+    public function infos($id)
+    {   
+        $repo = $this->getDoctrine()->getRepository(Equipment::class);
+
+        $equipment = $repo->find($id);
+
+        return $this->render('list/infos.html.twig', [
+            'equipment' => $equipment,
+        ]);
+    }
 
 }
