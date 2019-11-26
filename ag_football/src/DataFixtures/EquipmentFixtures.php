@@ -25,7 +25,7 @@ class EquipmentFixtures extends Fixture
 
         $equipment2 = new Equipment();
         $equipment2 -> setDesignation("Ballon")
-                -> setDescription("Ballon de foot avec un poids de 420 grammes (Taille 5).")
+                -> setDescription("Ballon de football avec un poids de 420 grammes (Taille 5).")
                 -> setBrand('Kipsta')
                 -> setPrice(10.00)
                 -> setQuantity(5);

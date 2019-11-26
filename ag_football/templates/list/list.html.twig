@@ -12,7 +12,7 @@
 
         </tr>
     {% for equipment in equipments | sort %}
-            <tr>
+            <tr onclick="document.location.href={{ path('list_infos', { 'id': equipment.id }) }} ">
         
                 <td><a href="{{ path('list_infos', { 'id': equipment.id }) }}">{{ equipment.designation }}</a></td>
                 <td>{{ equipment.quantity }}</td>
@@ -20,6 +20,9 @@
     {% endfor %}
 </table>
 
+<script type="text/javascript">
+document.querySelectorAll(tr)
 
+</script>
 
 {% endblock %}
